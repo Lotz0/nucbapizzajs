@@ -86,5 +86,6 @@ if (localStorage.getItem("precioPizza")) {
 
 if (localStorage.getItem("imgPizza")){
     imgZappi.setAttribute('src',localStorage.getItem( "imgPizza"))
+    imgZappi.setAttribute('style', "")
     console.log(localStorage.getItem("imgPizza"))
 }
