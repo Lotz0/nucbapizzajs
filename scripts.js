@@ -16,6 +16,7 @@ const ShowPrice = document.getElementById('pizzaPrice');
 const error = document.getElementById("failure");
 const pizzaContainer = document.getElementById("resultados");
 const divImagenPizza = document.getElementById('pizzaImg');
+const imgZappi = document.getElementById("imagenpizza");
 
 const nombrePizza = (pizzaNombre) => {
     showPizza.textContent = `nombre de pizza:  ${pizzaNombre}`;
@@ -30,6 +31,9 @@ const EError = (id) => {
     error.textContent = ` El ID ${id} es erroneo`;
     pizzaContainer.style.display = 'none';
 };
+
+
+
 
 
 
@@ -50,8 +54,13 @@ const buscador = () => {
         `
         
         let pizzaJSON = JSON.stringify(pizza_id);
-        localStorage.setItem("pizzaData", pizzaJSON)
-        
+
+        localStorage.setItem("pizzaJSON", pizzaJSON)
+        localStorage.setItem("idPizza", ID.value)
+        localStorage.setItem("nombrePizza", pizza_id.nombre)
+        localStorage.setItem("precioPizza", pizza_id.precio)
+        localStorage.setItem("imgPizza", pizza_id.imagen)
+
     } else {
         EError(ID.value);
             error.style.display = "flex";
@@ -66,8 +75,16 @@ form.addEventListener('submit', (e) => {
     form.reset(); 
 });
 
-document.addEventListener("DOMContentLoaded", function(event){
-    let pizzaGuardada = JSON.parse(localStorage.getItem("pizzaData"))
-    console.log(pizzaGuardada)
-})
 
+if (localStorage.getItem("nombrePizza") ){
+    showPizza.innerText = localStorage.getItem("nombrePizza")
+}
+
+if (localStorage.getItem("precioPizza")) {
+    ShowPrice.innerText = localStorage.getItem("precioPizza")
+}
+
+if (localStorage.getItem("imgPizza")){
+    imgZappi.setAttribute('src',localStorage.getItem( "imgPizza"))
+    console.log(localStorage.getItem("imgPizza"))
+}
