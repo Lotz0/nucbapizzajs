@@ -1,0 +1,66 @@
+*{
+    font-family: 'Kanit', sans-serif;
+    padding: 0;
+    margin: 0;
+    
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: dimgray ;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 1000px;
+    height: 600px;
+}
+#formPizza{
+    display: flex;
+    flex-direction: column;
+}
+#pizzaPrice{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#resultados{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#imagecont, #pizzaImg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 150px;
+}
+img{
+    width: 200px;
+    height: 150px;
+}
+
+#card{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(237, 124, 11);
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 13px;
+    border-color: rgb(34, 33, 33);
+    border-radius: 71px;
+    padding: 5px;
+}
